@@ -1,5 +1,6 @@
 ﻿CREATE TABLE [dbo].[Person]
 (
 	[Id] INT NOT NULL PRIMARY KEY IDENTITY,
-	[FullName] NVARCHAR(100) NOT NULL
+	[FullName] NVARCHAR(100) NOT NULL, 
+    [DateUpdated] DATETIME2 NOT NULL DEFAULT getdate()
 )

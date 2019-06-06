@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29001.49
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreTestTransactionScope", "CoreTestTransactionScope.csproj", "{D8A66BE3-0FC6-4AF5-824E-410F096E4E3C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreTestTransactionScope", "CoreTestTransactionScope.csproj", "{D8A66BE3-0FC6-4AF5-824E-410F096E4E3C}"
 EndProject
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "db", "..\db\db.sqlproj", "{EF31DD1F-39E4-4EE3-BA41-39470C0ADCF1}"
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "CoreTestTransactionScope.db", "..\db\CoreTestTransactionScope.db.sqlproj", "{EF31DD1F-39E4-4EE3-BA41-39470C0ADCF1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
