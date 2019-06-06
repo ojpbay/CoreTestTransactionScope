@@ -18,9 +18,24 @@ namespace CoreTestTransactionScope
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string sql = $"INSERT INTO dbo.Person (FullName, DateUpdated) VALUES ('{person.FullName}', '{person.DateUpdated}'); SELECT CAST(SCOPE_IDENTITY() AS INT);";
+                SqlParameter fullNameParam = new SqlParameter();
+                fullNameParam.ParameterName = "@FullName";
+                fullNameParam.Value = person.FullName;
+
+                SqlParameter dateUpdateParam = new SqlParameter();
+                dateUpdateParam.ParameterName = "@DateUpdated";
+                dateUpdateParam.Value = person.DateUpdated;
+
+                string sql = @"
+                        INSERT INTO dbo.Person (FullName, DateUpdated)
+                        VALUES (@FullName, @DateUpdated);
+
+                        SELECT CAST(SCOPE_IDENTITY() AS INT);";
                 using (SqlCommand command = new SqlCommand(sql, connection))
                 {
+                    command.Parameters.Add(fullNameParam);
+                    command.Parameters.Add(dateUpdateParam);
+
                     command.CommandType = CommandType.Text;
                     connection.Open();
                     personId = (int)await command.ExecuteScalarAsync();
